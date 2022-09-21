@@ -1,0 +1,101 @@
+::-webkit-scrollbar {
+  width: 7px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9093994d;
+  border-radius: 2px;
+  box-shadow: inset 0 0 6px #0003;
+}
+::-webkit-scrollbar-track {
+  background-color: #0000000d;
+}
+
+.ant-layout {
+  height: 100%;
+  position: relative;
+}
+
+.ant-tabs {
+  position: initial;
+  padding: 0 10px;
+}
+
+.ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+  margin: 0 !important;
+}
+
+.form-design-layout {
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  .ant-layout-sider {
+    background: transparent;
+  }
+
+  .element-area-container , .setting-area-container {
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  .element-area-container {
+    margin: 10px 0 10px 10px;
+  }
+
+  .setting-area-container {
+    margin: 10px 10px 10px 0;
+    padding-bottom: 10px;
+  }
+  
+
+  .ant-layout-header {
+    padding: 0 10px;
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+  }
+  
+  .ant-layout-content {
+    position: relative;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .toolbar-area-container, .form-area-container {
+      width: 100%;
+      background: #fff;
+      border-radius: 2px;
+      padding: 10px;
+    }
+
+    .toolbar-area-container {
+      margin-bottom: 10px;
+    }
+
+    .form-area-container {
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+
+}
+// 修改事件属性编辑器a-form-item布局
+.event-handler-form-item {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+
+  .ant-btn-round {
+    float: right;
+  }
+}
+
+
+
+
+
+
+

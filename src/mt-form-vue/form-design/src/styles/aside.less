@@ -1,0 +1,118 @@
+/* 一级菜单样式 */
+.action-menu {
+  &>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70px;
+  margin: 0;
+  padding: 10px 0;
+  background: #ffffff;
+  z-index: 100;
+  box-sizing: border-box;
+  border-right: 1px #f2f4f6 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 1em;
+    cursor: default;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .action-area-container {
+    overflow: auto;
+  }
+
+  /* span 内容样式 */
+  .aside-list-item {
+    height: 3em;
+    width: 3em;
+    color: #8e8ea9;
+    position: relative;
+    margin: 5px auto;
+    margin-bottom: 10px;
+    /* 无法选中css */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* span 鼠标悬浮样式 */
+    &:hover {
+      cursor: pointer;
+      color: #1890ff;
+    }
+  }
+
+  /* 鼠标选中样式 */
+  .active {
+    background-color: #1890ff;
+    border-radius: 3em;
+    color: #fff;
+  }
+
+  .active:hover {
+    color: #fff;
+  }
+}
+
+/* 二级菜单样式 */
+.slider-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  height: 100%;
+  padding: 10px 10px 20px;
+  top: 0;
+  z-index: 99;
+  /* 二级菜单显示隐藏动画 */
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  .title {
+    padding: 0 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .content {
+    padding: 0 8px;
+    flex: 1;
+    position: relative;
+  }
+}
+
+/* 隐藏二级菜单 */
+.slider-menu-left {
+  left: -240px;
+}
+
+/* 显示二级菜单 */
+.slider-menu-open {
+  left: 70px;
+}

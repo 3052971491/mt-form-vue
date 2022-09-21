@@ -18,3 +18,32 @@ Drag and drop VUE pages for rapid development
 ## Preview
 
 - [mt-form-vue](https://www.zczchen.top/mtform/)
+
+## Install and use
+
+- Get the project code
+
+```bash
+git clone https://github.com/3052971491/mt-form-vue.git
+```
+
+- Installation dependencies
+
+```bash
+cd mt-form-vue
+
+yarn install
+
+```
+
+- run
+
+```bash
+yarn dev
+```
+
+- build
+
+```bash
+yarn lib
+```

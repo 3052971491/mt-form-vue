@@ -18,3 +18,32 @@
 ## 预览
 
 - [mt-form-vue](https://www.zczchen.top/mtform/)
+
+## 安装使用
+
+- 获取项目代码
+
+```bash
+git clone https://github.com/3052971491/mt-form-vue.git
+```
+
+- 安装依赖
+
+```bash
+cd mt-form-vue
+
+yarn install
+
+```
+
+- 运行
+
+```bash
+yarn dev
+```
+
+- 打包
+
+```bash
+yarn lib
+```

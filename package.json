@@ -38,7 +38,6 @@
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
     "@types/codemirror": "^5.60.5",
     "@types/lodash-es": "^4.17.6",
     "@vitejs/plugin-vue-jsx": "^1.3.10",

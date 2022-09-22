@@ -1,6 +1,5 @@
 import { createRequire } from 'module';
 import path from "path";
-import commonjs from '@rollup/plugin-commonjs';
 const requireds = createRequire(import.meta.url);
 const __dirname = path.resolve();
 
@@ -44,7 +43,6 @@ const baseConfig = defineConfig({
     configFile: false,
     publicDir: false,
     plugins: [
-        commonjs({ requireReturnsDefault: true }),
         vue(),
         vueJsx(),
     ],
@@ -89,7 +87,7 @@ const baseConfig = defineConfig({
         },
     },
     build: {
-        rollupOptions,
+        ...rollupOptions,
         lib: {
             // 入口
             entry: path.resolve(entryDir, 'index.ts'),

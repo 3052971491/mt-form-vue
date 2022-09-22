@@ -18,6 +18,8 @@ Drag and drop VUE pages for rapid development
 ## Preview
 
 - [mt-form-vue](https://www.zczchen.top/mtform/)
+- [Using document](./doc/readme.md)
+- [API documentation](./doc/mt-form-vue%20api%E6%96%87%E6%A1%A3.md)
 
 ## Install and use
 
@@ -36,14 +38,22 @@ yarn install
 
 ```
 
+- build
+
+```bash
+yarn lib
+```
+
 - run
 
 ```bash
 yarn dev
 ```
 
-- build
+- use
 
 ```bash
-yarn lib
+npm install mt-form-vue
+or
+yarn add mt-form-vue
 ```

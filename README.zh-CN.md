@@ -18,6 +18,8 @@
 ## 预览
 
 - [mt-form-vue](https://www.zczchen.top/mtform/)
+- [使用文档](./doc/readme.md)
+- [API文档](./doc/mt-form-vue%20api%E6%96%87%E6%A1%A3.md)
 
 ## 安装使用
 
@@ -27,7 +29,7 @@
 git clone https://github.com/3052971491/mt-form-vue.git
 ```
 
-- 安装依赖
+- 下载依赖
 
 ```bash
 cd mt-form-vue
@@ -36,14 +38,22 @@ yarn install
 
 ```
 
+- 打包
+
+```bash
+yarn lib
+```
+
 - 运行
 
 ```bash
 yarn dev
 ```
 
-- 打包
+- 使用
 
 ```bash
-yarn lib
+npm install mt-form-vue
+or
+yarn add mt-form-vue
 ```

@@ -1,6 +1,6 @@
 import { createRequire } from 'module';
 import path from "path";
-import commonjs from '@rollup/plugin-commonjs';
+// import commonjs from '@rollup/plugin-commonjs';
 const requireds = createRequire(import.meta.url);
 const __dirname = path.resolve();
 
@@ -20,11 +20,12 @@ const outDir = path.resolve(__dirname, 'lib');
 const rollupOptions = {
     target: 'es2015',
     // 这两个库不需要打包
-    external: ['vue', 'ant-design-vue', '@ant-design/icons-vue'],
+    external: ['vue', 'ant-design-vue', 'vue-json-pretty', '@ant-design/icons-vue'],
     output: {
         globals: {
             vue: 'Vue',
             'ant-design-vue': 'ant-design-vue',
+            'vue-json-pretty': 'vue-json-pretty',
             '@ant-design/icons-vue': '@ant-design/icons-vue',
         }
     },
@@ -44,9 +45,9 @@ const baseConfig = defineConfig({
     configFile: false,
     publicDir: false,
     plugins: [
-        commonjs({ requireReturnsDefault: true }),
         vue(),
         vueJsx(),
+        // commonjs({ requireReturnsDefault: true }),
     ],
     resolve: {
         alias: [

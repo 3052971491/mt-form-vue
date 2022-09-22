@@ -15,7 +15,7 @@ import {
   nextTick,
   PropType,
 } from "vue";
-import CodeMirror from "codemirror/lib/codemirror.js";
+import CodeMirror from "codemirror";
 // 主题
 import "./codemirror.css";
 import "codemirror/theme/idea.css";

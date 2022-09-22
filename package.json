@@ -18,12 +18,12 @@
     "doc",
     "test"
   ],
-  "main": "./lib/mt-form-vue.umd.js",
-  "module": "./lib/mt-form-vue.es.js",
+  "main": "./lib/mt-form-vue.umd.cjs",
+  "module": "./lib/mt-form-vue.js",
   "exports": {
     ".": {
-      "import": "./lib/mt-form-vue.es.js",
-      "require": "./lib/mt-form-vue.umd.js"
+      "import": "./lib/mt-form-vue.js",
+      "require": "./lib/mt-form-vue.umd.cjs"
     }
   },
   "type": "module",

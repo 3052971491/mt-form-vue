@@ -11,11 +11,11 @@ import {
   onUnmounted,
   watchEffect,
   watch,
-  unref,
+  computed,
   nextTick,
   PropType,
 } from "vue";
-import CodeMirror from "codemirror";
+import CodeMirror from "codemirror/lib/codemirror.js";
 // 主题
 import "./codemirror.css";
 import "codemirror/theme/idea.css";
@@ -48,7 +48,6 @@ import 'codemirror/addon/selection/selection-pointer'
 import 'codemirror/addon/scroll/simplescrollbars.css'
 import 'codemirror/addon/scroll/simplescrollbars'
 import { MODE } from "./typing";
-import { computed } from "@vue/reactivity";
 export default defineComponent({
   name: "MtCodemirrorEditor",
 });

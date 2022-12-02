@@ -17,7 +17,7 @@
 
 ## 预览
 
-- [mt-form-vue](https://www.zczchen.top/mtform/)
+- [mt-form-vue](https://www.zczchen.top/mt-form-vue/)
 
 ## 安装使用
 

@@ -17,7 +17,7 @@ Drag and drop VUE pages for rapid development
 
 ## Preview
 
-- [mt-form-vue](https://www.zczchen.top/mtform/)
+- [mt-form-vue](https://www.zczchen.top/mt-from-vuew/)
 
 ## Install and use
 

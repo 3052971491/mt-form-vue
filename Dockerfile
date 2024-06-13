@@ -15,7 +15,7 @@ RUN echo "package restore is success"
 
 # 编译项目
 # RUN npm run build
-RUN yarn run docs:build
+RUN yarn run build
 RUN echo "build is success"
 
 # ================== STEP 2: Publish ==================

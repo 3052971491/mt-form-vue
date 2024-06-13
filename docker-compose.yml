@@ -1,0 +1,15 @@
+version: '3'
+
+networks:
+  web_net:
+    external: true
+
+services:
+  vueui:
+    container_name: mt-form-vue
+    image: yuanjunjie/mt-form-vue:dev
+    restart: always
+    networks:
+      - web_net
+    ports:
+      - '8085:80'

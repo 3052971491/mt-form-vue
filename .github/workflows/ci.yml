@@ -16,11 +16,11 @@ jobs:
           docker build -t yuanjunjie/mt-form-vue:dev .
 
       - name: Login to Docker Registry
-        run: docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
 
       - name: Push to Docker Registry
         run: |
-          docker push yuanjunjie/mt-form-vue:dev
+          docker push swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
 
   deploy:
     needs: [build]
@@ -33,12 +33,12 @@ jobs:
       - name: Update docker images
         run: |
           sudo su
-          sudo docker pull yuanjunjie/mt-form-vue:dev
+          sudo docker pull swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
 
       - name: Login to Docker Registry 
         run: |
           sudo su
-          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+          sudo docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
 
       - name: Run
         run: |
@@ -48,6 +48,6 @@ jobs:
       - name: Clear Docker Cache
         run: |
           sudo su
-          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+          sudo docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
           sudo docker image prune -f
           sudo docker volume prune -f

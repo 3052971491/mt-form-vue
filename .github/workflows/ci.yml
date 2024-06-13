@@ -20,6 +20,7 @@ jobs:
 
       - name: Push to Docker Registry
         run: |
+          docker tag mt-form-vue:dev swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
           docker push swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
 
   deploy:

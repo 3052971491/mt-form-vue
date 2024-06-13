@@ -1,6 +1,6 @@
 import { RuleConfig } from '/@/types/form-design/config/rule-config';
 import { ElementDataSourceConfig } from '/@/types/form-design/config/element-data-source-config';
-import { Alias } from '/@/types/form-design/config/Alias-config';
+import { Alias } from '/@/types/form-design/config/alias-config';
 import { ElementSizeEnum } from '/@/enums/form-design/size-enum';
 import { Mode } from '/@/enums/form-design/select-enum';
 /** 下拉框配置 */

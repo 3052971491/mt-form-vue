@@ -1,6 +1,5 @@
 import { RuleConfig } from '/@/types/form-design/config/rule-config';
 import { ElementDataSourceConfig } from '/@/types/form-design/config/element-data-source-config';
-import { Alias } from '/@/types/form-design/config/Alias-config'
 import { ElementSizeEnum } from '/@/enums/form-design/size-enum';
 /** 多选框配置 */
 export interface checkboxTyping {
@@ -25,7 +24,7 @@ export interface checkboxTyping {
   /** 自定义样式 */
   customStyles: Array<string>,
   /** 子元素别名 */
-  alias: Alias;
+  alias: any;
   /** 数据来源配置 */
   dataSourceConfig: ElementDataSourceConfig;
   /** 创建时 */

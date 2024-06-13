@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build docker
+        run: |
+          docker build -t yuanjunjie/mt-form-vue:dev .
+
+      - name: Login to Docker Registry
+        run: docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push to Docker Registry
+        run: |
+          docker push yuanjunjie/mt-form-vue:dev
+
+  deploy:
+    needs: [build]
+    name: Deploy
+    runs-on: fd-dev
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update docker images
+        run: |
+          sudo su
+          sudo docker pull yuanjunjie/mt-form-vue:dev
+
+      - name: Login to Docker Registry 
+        run: |
+          sudo su
+          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Run
+        run: |
+          sudo su
+          sudo docker compose -f docker-compose.yml up -d
+          
+      - name: Clear Docker Cache
+        run: |
+          sudo su
+          sudo docker login --username=${{ secrets.DOCKER_USER_NAME }} --password=${{ secrets.DOCKER_PASSWORD }}
+          sudo docker image prune -f
+          sudo docker volume prune -f

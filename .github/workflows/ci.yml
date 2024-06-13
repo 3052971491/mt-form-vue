@@ -13,7 +13,7 @@ jobs:
 
       - name: Build docker
         run: |
-          docker build -t yuanjunjie/mt-form-vue:dev .
+          docker build -t mt-form-vue:dev .
 
       - name: Login to Docker Registry
         run: docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com

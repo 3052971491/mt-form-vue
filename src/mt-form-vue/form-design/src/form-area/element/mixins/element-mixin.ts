@@ -61,7 +61,7 @@ export default defineComponent({
       if (this.redactState) return;
       if (!this.el.options.rules) return;
       this.reactiveData.rules = [];
-      this.el.options.rules.forEach((item: RuleConfig) => {
+      this.el.options.rules.forEach((item: any) => {
         let obj: Rule = {};
         if (item.type == "required") {
           obj = {
@@ -70,7 +70,7 @@ export default defineComponent({
             trigger: ["change", "blur"],
           };
         } else {
-          let validateFields = async (_rule: Rule, value: string) => {
+          let validateFields = async (_rule: any, value: string) => {
             if (!value) {
               return Promise.resolve();
             } else {

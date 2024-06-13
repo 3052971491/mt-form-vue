@@ -121,13 +121,6 @@
                   v-model:value="item.type"
                   :options="requestParamsTypeList"
                   placeholder="请选择"
-                  @change="
-                    handleChangeType({
-                      type: i.value,
-                      index: idx,
-                      value: 'value',
-                    })
-                  "
                 ></a-select>
               </a-form-item>
             </a-col>
@@ -200,7 +193,6 @@
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
 import { defaultDataSourcesConfig } from "../../event/element-event/form/index";
-import { dataSourcesConfigTyping } from "../../event/element-event/form/form-config-typing";
 import {
   DeleteOutlined,
   PlusOutlined,
@@ -237,7 +229,7 @@ export default defineComponent({
         return Promise.reject("唯一名称不能为空");
       } else {
         const idx = this.formConfig.dataSources.findIndex(
-          (item: dataSourcesConfigTyping) => {
+          (item: any) => {
             return item.uniqueName == value && this.id != item.dataSourceId;
           }
         );
@@ -251,7 +243,7 @@ export default defineComponent({
     /**
      * 校验请求头，参数，发送数据的值
      */
-    let checkvalue = async (_rule: Rule, value: string) => {
+    let checkvalue = async (_rule: any, value: any) => {
       if (!value) {
         return Promise.reject("值不能为空");
       } else {
@@ -292,7 +284,7 @@ export default defineComponent({
       id: "",
       visible: false,
       datasourceLoading: false,
-      datasourceInfo: {} as dataSourcesConfigTyping,
+      datasourceInfo: {} as any,
       requestMethodList: [
         { label: "get", value: "get" },
         { label: "post", value: "post" },
@@ -324,7 +316,7 @@ export default defineComponent({
       get() {
         return this.formConfig;
       },
-      set(value: dataSourcesConfigTyping) {
+      set(value: any) {
         this.$emit("update:formConfig", value);
       },
     },
@@ -338,7 +330,7 @@ export default defineComponent({
       this.datasourceLoading = true;
       if (!!this.id) {
         const info = this.config.dataSources.find(
-          (item: dataSourcesConfigTyping) => {
+          (item: any) => {
             return item.dataSourceId === this.id;
           }
         );
@@ -379,11 +371,11 @@ export default defineComponent({
       (this.$refs.datasourceForm as any).validate().then(() => {
         if (!!this.id) {
           const idx = this.config.dataSources.findIndex(
-            (item: dataSourcesConfigTyping) => {
+            (item: any) => {
               return item.dataSourceId === this.id;
             }
           );
-          http(this.config.dataSources[idx], this.formConfig.DSV);
+          http(this.config.dataSources[idx], this.formConfig.DSV, '');
         }
       });
     },
@@ -397,7 +389,7 @@ export default defineComponent({
           this.datasourceLoading = true;
           if (!!this.id) {
             const idx = this.config.dataSources.findIndex(
-              (item: dataSourcesConfigTyping) => {
+              (item: any) => {
                 return item.dataSourceId === this.id;
               }
             );

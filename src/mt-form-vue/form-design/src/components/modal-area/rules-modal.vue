@@ -96,7 +96,6 @@ import { defineComponent, reactive, ref, toRefs, computed } from "vue";
 import MtModal from "/@/components/mt-modal.vue";
 import MtEmpty from "/@/components/mt-empty.vue";
 import { cloneDeep } from "lodash-es";
-import { ruleTyping } from '../../event/element-event/basic-element/index-typing';
 import {
   DeleteOutlined,
   PlusOutlined,
@@ -104,7 +103,7 @@ import {
 } from "@ant-design/icons-vue";
 
 interface ruleFormTyping {
-  rulesList: ruleTyping[];
+  rulesList: any[];
 }
 export default defineComponent({
   name: "RulesModal",
@@ -185,7 +184,7 @@ export default defineComponent({
      * 新增规则
      */
     const handleAddRuleClick = () => {
-      const obj: ruleTyping = {
+      const obj: any = {
         type: null,
         pattern: null,
         message: null,
@@ -201,7 +200,7 @@ export default defineComponent({
     /**
      * 类型选择变化
      */
-    function handleChangeType(val: string, idx: number, item: ruleTyping) {
+    function handleChangeType(val: string, idx: number, item: any) {
       switch (val) {
         case 'required':
           item.message = '该字段不能为空';

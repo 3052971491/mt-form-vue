@@ -22,7 +22,6 @@
 import { defineComponent, reactive, ref, toRefs, computed } from "vue";
 import MtModal from "/@/components/mt-modal.vue";
 import { cloneDeep } from "lodash-es";
-import { alias } from '../../event/element-event/basic-element/index-typing';
 import { t } from "/@/utils/i18n";
 export default defineComponent({
   name: "AliasModal",
@@ -50,7 +49,7 @@ export default defineComponent({
     const visible = ref(false);
     const form = ref();
     const data = reactive({
-      form: {} as alias,
+      form: {} as any,
     });
     const hasChildren = computed(() => {
       const type = element.value.type;
@@ -75,7 +74,7 @@ export default defineComponent({
      * 确认弹框
      */
     const handleOk = () => {
-      form.value.validate().then((res: alias) => {
+      form.value.validate().then((res: any) => {
         options.value.alias = cloneDeep(res);
         handleCancel();
       });

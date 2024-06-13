@@ -18,7 +18,7 @@ export const insertGlobalCssToHead = function (css: string | null, formId = '') 
     }
 
     // 新增
-    let newStyle = document.createElement('style');
+    let newStyle = document.createElement('style') as any;
     newStyle.type = 'text/css';
     newStyle.rel = 'stylesheet';
     newStyle.id = !!formId ? 'mt-form-vue-global-css' + '-' + formId : 'mt-form-vue-global-css';

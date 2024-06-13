@@ -72,13 +72,14 @@ const {
 const {
   getGolbalCss,
   getGolbalFunction,
+  getFormConfig,
 } =useExposeRenderApi(formRenderRef, global, formJson.value, DSV.value)
 
 buildFormOnCreated();
 handleFormChange();
 
-insertGlobalCssToHead(getGolbalCss.value);
-insertGlobalFunctionsToHtml(getGolbalFunction.value);
+insertGlobalCssToHead(getFormConfig.value?.GCSS ?? '');
+insertGlobalFunctionsToHtml(getFormConfig.value?.GFUNC ?? '');
 
 onMounted(() => {
   buildFormOnMounted();

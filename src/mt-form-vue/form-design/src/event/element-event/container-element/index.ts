@@ -27,7 +27,7 @@ export const container: Array<FormDesignElementTyping> = [
       gutter: 12,
       justify: Justify.START,
       wrap: true,
-    } as rowTyping,
+    } as any,
     children: [],
   },
   {
@@ -54,7 +54,7 @@ export const container: Array<FormDesignElementTyping> = [
       lg: null,
       xl: null,
       xxl: null,
-    } as colTyping,
+    } as any,
     list: [],
   },
   {
@@ -74,7 +74,7 @@ export const container: Array<FormDesignElementTyping> = [
       bordered: true,
       hoverable: false,
       size: ContainerSizeEnum.SMALL,
-    } as cardTyping,
+    } as any,
     list: [],
   },
   {
@@ -95,7 +95,7 @@ export const container: Array<FormDesignElementTyping> = [
       size: ContainerSizeEnum.SMALL,
       destroyInactiveTabPane: false,
       centered: false,
-    } as tabsTyping,
+    },
     children: [],
   },
   {
@@ -113,7 +113,7 @@ export const container: Array<FormDesignElementTyping> = [
       hidden: false,
       active: false,
       disabled: false,
-    } as tabPaneTyping,
+    },
     list: [],
   },
   {

@@ -1,4 +1,4 @@
-const modules = import.meta.globEager('./**/*.vue');
+const modules = import.meta.globEager('./**/*.vue') as any;
 
 const install = (app) => {
   for (const path in modules) {

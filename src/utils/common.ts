@@ -44,7 +44,7 @@ export function buildUUID(len = 8, radix = 0, containTime = 0): string {
       }
     }
   }
-  if (containTime == null && containTime == true) {
+  if (containTime == null) {
     return now.getTime() + '' + uuid.join('');
   } else return uuid.join('');
 }

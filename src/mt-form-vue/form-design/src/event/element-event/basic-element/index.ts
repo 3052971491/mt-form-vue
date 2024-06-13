@@ -5,7 +5,6 @@
  * @Last Modified time: 2022-08-29 15:06:05
  */
 import { FormDesignElementTyping } from '/@/types/form-design/index-typing'
-import { inputTyping } from "/@/types/form-design/basic-element/input";
 import { textareaTyping } from "/@/types/form-design/basic-element/textarea";
 import { switchTyping } from "/@/types/form-design/basic-element/switch";
 import { inputNumberTyping } from "/@/types/form-design/basic-element/input-number";
@@ -53,7 +52,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as inputTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -87,7 +86,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as textareaTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -126,7 +125,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as inputNumberTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -159,7 +158,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as switchTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -209,7 +208,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as radioTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -257,7 +256,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as checkboxTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -312,7 +311,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as selectTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -481,7 +480,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as dateTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -511,7 +510,7 @@ export const basic: Array<FormDesignElementTyping> = [
       onCreated: "",
       onMounted: "",
       onChange: "",
-    } as rateTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -553,7 +552,7 @@ export const basic: Array<FormDesignElementTyping> = [
 
       onCreated: "",
       onMounted: "",
-    } as StaticTextTyping,
+    } as any,
   },
   {
     elementId: "",

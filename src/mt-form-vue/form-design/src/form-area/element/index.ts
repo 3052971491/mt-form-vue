@@ -1,6 +1,6 @@
 const comps = {};
 
-const modules = import.meta.globEager('./**/*.vue');
+const modules = import.meta.globEager('./**/*.vue') as any;
 
 for (const path in modules) {
   const cname = modules[path].default.name;

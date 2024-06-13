@@ -19,7 +19,7 @@ export const others: Array<FormDesignElementTyping> = [
       customStyles: [],
       hidden: false,
       position: Position2.LEFT,
-    } as CustomButtonTyping,
+    } as any,
   },
   {
     elementId: "",
@@ -50,6 +50,6 @@ export const others: Array<FormDesignElementTyping> = [
         event: '',
         systemAction: null,
       },
-    } as TemplateBtnTyping,
+    } as any,
   }
 ];

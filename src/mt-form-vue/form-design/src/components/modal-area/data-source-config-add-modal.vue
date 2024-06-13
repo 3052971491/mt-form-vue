@@ -19,7 +19,6 @@
 import { defineComponent, reactive, ref, toRefs, computed, watch } from "vue";
 import MtModal from "/@/components/mt-modal.vue";
 import MtInput from "/@/components/mt-input.vue";
-import { dataSourceOptions } from '../../event/element-event/basic-element/index-typing';
 import { t } from "/@/utils/i18n";
 export default defineComponent({
   name: "DataSourceConfigAddModal",
@@ -44,14 +43,14 @@ export default defineComponent({
     const { value, status } = toRefs(props);
     const visible = ref(false);
     const form = ref();
-    let element = reactive({
+    let element = reactive<any>({
       option: {
         label: null,
         value: undefined,
         disabled: false,
       }
     });
-    watch(value, (val) => {
+    watch(value, (val: any) => {
       element.option = val;
     })
     const title = computed(() => {
@@ -81,7 +80,7 @@ export default defineComponent({
      * 确认弹框
      */
     const handleOk = () => {
-      form.value.validate().then((res: dataSourceOptions) => {
+      form.value.validate().then((res) => {
         emit('save', res)
         handleCancel();
       });

@@ -9,7 +9,7 @@
  * 表单属性编辑器
  */
 const fromEditors = {};
-const fromModules = import.meta.globEager('./form-attributes/*.vue');
+const fromModules = import.meta.globEager('./form-attributes/*.vue') as any;
 for (const path in fromModules) {
   const name = fromModules[path].default.name;
   fromEditors[name] = fromModules[path].default;
@@ -19,7 +19,7 @@ for (const path in fromModules) {
  * 组件属性编辑器
  */
 const elementEditors = {};
-const elementModules = import.meta.globEager('./element-attributes/**/*.vue');
+const elementModules = import.meta.globEager('./element-attributes/**/*.vue') as any;
 for (const path in elementModules) {
   const name = elementModules[path].default.name;
   elementEditors[name] = elementModules[path].default;
@@ -29,7 +29,7 @@ for (const path in elementModules) {
  * 函数属性编辑器
  */
 const eventEditors = {};
-const eventModules = import.meta.globEager('./event-handler/*.vue');
+const eventModules = import.meta.globEager('./event-handler/*.vue') as any;
 for (const path in eventModules) {
   const name = eventModules[path].default.name;
   eventEditors[name] = eventModules[path].default;

@@ -52,7 +52,6 @@
 import { computed, defineComponent, ref, toRefs, nextTick } from "vue";
 import DatasourceDrawer from "../components/popup-area//datasource-drawer.vue";
 import MtEmpty from "/@/components/mt-empty.vue";
-import { dataSourcesConfigTyping } from "../event/element-event/form/form-config-typing";
 import { t } from "/@/utils/i18n";
 import EventHandlerDrawer from '../components/popup-area/event-handler-drawer.vue';
 import { MODE } from "/@/components/codemirror/typing";
@@ -92,14 +91,14 @@ export default defineComponent({
      */
     const handleDatasourceEditClick = function ({
       dataSourceId,
-    }: dataSourcesConfigTyping) {
+    }: any) {
       datasourceDrawer.value.showDrawer(dataSourceId);
     };
     const handleDatasourceDelClick = function ({
       dataSourceId,
-    }: dataSourcesConfigTyping) {
+    }: any) {
       const idx: number = config.value.dataSources.findIndex(
-        (item: dataSourcesConfigTyping) => {
+        (item: any) => {
           return item.dataSourceId === dataSourceId;
         }
       );

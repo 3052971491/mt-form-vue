@@ -7,7 +7,7 @@ networks:
 services:
   vueui:
     container_name: mt-form-vue
-    image: swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue
+    image: swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
     restart: always
     networks:
       - web_net

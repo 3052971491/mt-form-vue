@@ -16,7 +16,7 @@ jobs:
           docker build -t mt-form-vue:dev .
 
       - name: Login to Docker Registry
-        run: docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
+        run: docker login -u ${{ secrets.HUAWEI_CLOUD_USERNAME }} -p ${{ secrets.HUAWEI_CLOUD_PASSWORD }} swr.cn-north-4.myhuaweicloud.com
 
       - name: Push to Docker Registry
         run: |
@@ -34,13 +34,12 @@ jobs:
       - name: Update docker images
         run: |
           sudo su
-          sudo docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
           sudo docker pull swr.cn-north-4.myhuaweicloud.com/yuanjunjie/mt-form-vue:dev
 
       - name: Login to Docker Registry 
         run: |
           sudo su
-          sudo docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
+          sudo docker login -u ${{ secrets.HUAWEI_CLOUD_USERNAME }} -p ${{ secrets.HUAWEI_CLOUD_PASSWORD }} swr.cn-north-4.myhuaweicloud.com
 
       - name: Run
         run: |
@@ -50,6 +49,5 @@ jobs:
       - name: Clear Docker Cache
         run: |
           sudo su
-          sudo docker login -u cn-north-4@MLLGQIDRLOWDRQDJD1NM -p 49ffb799cc65b40284438c83859e66870344307e8132ce17fe63904e0e562c0b swr.cn-north-4.myhuaweicloud.com
           sudo docker image prune -f
           sudo docker volume prune -f
